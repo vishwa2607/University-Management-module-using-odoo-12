@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+            <record id="course_view_record" model="ir.ui.view">
+            <field name="name">course.course.form</field>
+            <field name="model">course.course</field>
+            <field name="arch" type="xml">
+                <form string="Account">
+                   <sheet>
+                       <group>
+                           <field name="course_name"/>
+                           <field name="course_credit"/>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="course_action_menu" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">course.course</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        </record>
+    	<menuitem id="university_menu"
+              	name="University"/>
+        	<menuitem id="course_menu" parent="university_menu" name="Courses Offered"
+            action ="course_action_menu" />
+	</data>
+</odoo>

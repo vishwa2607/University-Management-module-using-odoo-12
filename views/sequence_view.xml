@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="increment_field_sequence" model="ir.sequence">
+            <field name="name">Field Incrementation</field>
+            <field name="code">increment_your_field</field>
+            <field name="prefix">%num</field>
+            <field name="padding">3</field>
+            <field name="student_identity" eval="False"/>
+        </record>
+    </data>
+</odoo>
+
+
+<!--odoo: addons paths: ['/home/vishwa/.local/share/Odoo/addons/12.0', '/home/vishwa/odoo/odoo/addons', '/home/vishwa/odoo/addons']
+-->

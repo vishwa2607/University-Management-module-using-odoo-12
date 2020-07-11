@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="student_search_view" model="ir.ui.view">
+   <field name="name">Students Search View</field>
+   <field name="model">student.student</field>
+   <field name="arch" type="xml">
+       <search string="Search Student">
+           <field name="name"/>
+           <field name="age"/>
+           <field name="nationality"/>
+           <filter string="Male" name="male" domain="[('gender','=','male')]"
+                   help="Students with gender as Male"/>
+           <filter string="Female" name="female" domain="[('gender','=','female')]"
+                   help="Students with gender as Female"/>
+           <filter string="Others" name="others" domain="[('gender','=','others')]"
+                   help="Students with gender as Others"/>
+           <group expand="1" string="Group By">
+               <filter string="Nationality" name="nationality" context="{'group_by':'nationality'}"/>
+
+           </group>
+       </search>
+   </field>
+</record>
+
+
+        <record id="search_action_menu" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="res_model">student.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        </record>
+
+
+    	<menuitem id="university_menu"
+              	name="University"/>
+        	<menuitem id="search_menu_new" parent="university_menu" name="Student Information"
+            action ="search_action_menu" />
+    </data>
+</odoo>

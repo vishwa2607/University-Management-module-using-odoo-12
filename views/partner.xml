@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <data>
+    <record model="ir.ui.view" id="partner_instructor_view">
+    <field name="name">partner.instructor</field>
+    <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                    <page string="sessions">
+                            <group>
+                                <field name="instructor"/>
+                                <field name="session_ids"/>
+                            </group>
+                    </page>
+            </notebook>
+
+        </field>
+
+
+</record>
+    <record id="contact_list_action" model="ir.actions.act_window" >
+        <field name="name">contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+    <menuitem id="contact_menu_new" parent="university_menu" name="contact"
+            action ="contact_list_action" />
+
+    </data>
+</odoo>

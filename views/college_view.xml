@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+            <record id="college_view_record" model="ir.ui.view">
+            <field name="name">college.college.form</field>
+            <field name="model">college.college</field>
+            <field name="arch" type="xml">
+                <form string="Account">
+                   <sheet>
+                           <group>
+                               <field name="college_name"/>
+                           </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="college_action_menu" model="ir.actions.act_window">
+        <field name="name">College</field>
+        <field name="res_model">college.college</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        </record>
+    	<menuitem id="college_menu" parent="university_menu" name="Colleges"
+        action ="college_action_menu" sequence="20"/>
+	</data>
+</odoo>

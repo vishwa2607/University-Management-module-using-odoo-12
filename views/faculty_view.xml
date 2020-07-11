@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+            <record id="faculty_view_record" model="ir.ui.view">
+            <field name="name">faculty_new.faculty_new.form</field>
+            <field name="model">faculty_new.faculty_new</field>
+            <field name="arch" type="xml">
+                <form string="Account">
+                   <sheet>
+                       <group>
+                           <field name="faculty_name"/>
+                           <field name="designation"/>
+                           <field name="courses"/>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="faculty_action_menu" model="ir.actions.act_window">
+        <field name="name">Faculty</field>
+        <field name="res_model">faculty_new.faculty_new</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        </record>
+    		<menuitem id="faculty_menu" parent="university_menu" name="Faculty Info"
+            action ="faculty_action_menu" />
+	</data>
+</odoo>

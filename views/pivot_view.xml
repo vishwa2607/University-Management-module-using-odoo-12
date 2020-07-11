@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="view_student_pivot" model="ir.ui.view">
+            <field name="name">student.student.pivot</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+       <pivot string="Student Pivot">
+           <field name="student_identity" type="row"/>
+           <field name="name" type="col"/>
+       </pivot>
+   </field>
+</record>
+        <record id="action_view_task" model="ir.actions.act_window">
+    <field name="name">Tasks</field>
+    <field name="res_model">student.student</field>
+    <field name="view_mode">tree,pivot</field>
+
+   <field name="search_view_id" ref="search_view_id"/>
+
+</record>
+
+    </data>
+</odoo>
